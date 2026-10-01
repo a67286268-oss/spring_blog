@@ -1,0 +1,27 @@
+server:
+  port: 5000
+
+logging:
+  level:
+    root: INFO                         #스프링과 라이버러리는 INFO이상만 출력
+    com.tenco.spring_blog: INFO
+
+spring:
+  #데이터 베이스 연결 (MySQL)
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/myblog?serverTimezone=Asia/Seoul
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      # 운영에서는 create를 쓰지 않습니다. 없는 테이블과 컬럼만 추가
+      ddl-auto: update
+
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+    defer-datasource-initialization: true

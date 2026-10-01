@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO                         #스프링과 라이버러리는 INFO이상만 출력
+    com.tenco.spring_blog: DEBUG       #우리 코드는 DEBUG이상까지
+
+spring:
+  #데이터 베이스 연결 (H2 메모리 DB 사용)
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:blogdb
+    username: sa
+    password:
+
+  # H2 콘솔 화면 켜기 (http://localhost:8080/h2-console)
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+    defer-datasource-initialization: true
+
+#  sql:
+#    init:
+#      data-locations:
+#        - classpath:db/data.sql
