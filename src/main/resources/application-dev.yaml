@@ -30,7 +30,7 @@ spring:
 
     defer-datasource-initialization: true
 
-#  sql:
-#    init:
-#      data-locations:
-#        - classpath:db/data.sql
+  sql:
+    init:
+      data-locations:
+        - classpath:db/data.sql
